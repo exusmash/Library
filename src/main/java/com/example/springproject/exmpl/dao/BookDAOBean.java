@@ -20,7 +20,7 @@ public class BookDAOBean {
         this.connection = connection;
     }
 
-    public List<Book> findBooksByTitles(List<String> titles) throws SQLException {
+    public void findBooksByTitles(List<String> titles) throws SQLException {
         List<Book> result = new ArrayList<>();
         PreparedStatement selectQuery = connection.prepareStatement(BOOK_SELECT_BY_TITLE_QUERY);
         for (String title : titles){
@@ -36,7 +36,6 @@ public class BookDAOBean {
             }
         }
         System.out.println(result);
-        return result;
     }
 
     public Book findBookById(Integer bookId) throws SQLException {

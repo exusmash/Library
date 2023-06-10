@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Users",
@@ -52,4 +53,7 @@ public class User extends GenericModel {
     @JoinColumn(name = "role_id", nullable = false,
             foreignKey = @ForeignKey(name = "FK_ROLE_INFO_USER"))
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Rent> rents;
 }

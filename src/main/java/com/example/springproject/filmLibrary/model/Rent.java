@@ -10,13 +10,13 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "orders")
+@Table(name = "rents")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SequenceGenerator(name = "default_generator", sequenceName = "films_sequence", allocationSize = 1)
-public class Order extends GenericModel {
+public class Rent extends GenericModel {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false,
             foreignKey = @ForeignKey(name = "FK_ORDER_FILM_INFO_USERS"))
