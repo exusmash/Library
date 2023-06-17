@@ -35,6 +35,5 @@ public class Film extends GenericModel {
     @JoinTable(name = "films_directors",
             joinColumns = @JoinColumn(name = "film_id"), foreignKey = @ForeignKey(name = "FK_FILMS_DIRECTORS"),
             inverseJoinColumns = @JoinColumn(name = "director_id"), inverseForeignKey = @ForeignKey(name = "FK_DIRECTORS_FILMS"))
-
     List<Director> directors;
 }

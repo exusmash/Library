@@ -18,7 +18,7 @@ import java.util.List;
 @SequenceGenerator(name = "default_generator", sequenceName = "directors_sequence", allocationSize = 1)
 public class Director extends GenericModel {
     @Column(name = "directors_fio", nullable = false)
-    private String directorsFIO;
+    private String directorFIO;
 
     @Column(name = "position", nullable = false)
     private String position;
