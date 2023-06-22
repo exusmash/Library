@@ -1,5 +1,6 @@
-package com.example.springproject.filmLibrary.controller;
+package com.example.springproject.filmLibrary.controller.rest;
 
+import com.example.springproject.filmLibrary.controller.rest.GenericController;
 import com.example.springproject.filmLibrary.dto.RentDTO;
 import com.example.springproject.filmLibrary.model.Rent;
 import com.example.springproject.filmLibrary.service.RentService;

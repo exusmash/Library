@@ -1,4 +1,4 @@
-package com.example.springproject.filmLibrary.controller;
+package com.example.springproject.filmLibrary.controller.rest;
 
 import com.example.springproject.filmLibrary.dto.FilmDTO;
 import com.example.springproject.filmLibrary.model.Film;

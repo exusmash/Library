@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить автора</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <h3 class="mt-3 mb-3">Добавить режиссера</h3>
+  <form  class="needs-validation" novalidate style="max-width: 50vw" method="POST" th:action="@{/directors/add}" th:object="${directorDTO}">
+    <div class="mt-3 row g-2">
+      <div class="col-md">
+        <div class="form-floating">
+          <!--Название поля инпута должно строго соответствовать названию поля класса (DTO)-->
+          <input name="directorFio" type="text" class="form-control" id="directorFio" placeholder="ФИО режиссера" required>
+          <label for="directorFio">ФИО режиссера</label>
+          <div class="invalid-feedback">Обязательное поле для заполнения</div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="position" class="form-label">Позиция</label>
+      <input name="position" type="text" class="form-control" id="position">
+    </div>
+    <div class="mt-3 row g-2">
+      <button type="submit" class="btn btn-primary" onclick="validateForm()">Добавить</button>
+      <button type="button" class="btn btn-secondary" onclick="window.history.back()">Назад</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

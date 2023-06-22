@@ -1,8 +1,8 @@
-package com.example.springproject.filmLibrary.controller;
+package com.example.springproject.filmLibrary.controller.rest;
 
+import com.example.springproject.filmLibrary.controller.rest.GenericController;
 import com.example.springproject.filmLibrary.dto.UserDTO;
 import com.example.springproject.filmLibrary.model.User;
-import com.example.springproject.filmLibrary.repository.UserRepository;
 import com.example.springproject.filmLibrary.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

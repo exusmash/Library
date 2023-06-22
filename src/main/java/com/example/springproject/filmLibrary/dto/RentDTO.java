@@ -15,6 +15,7 @@ public class RentDTO extends GenericDTO {
     private Long filmId;
     private Long userId;
     private LocalDateTime rentDate;
+    private LocalDateTime endAccess;
     private Integer rentPeriod;
     private Boolean isPurchase;
 }

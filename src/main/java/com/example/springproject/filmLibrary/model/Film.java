@@ -27,6 +27,9 @@ public class Film extends GenericModel {
     @Column(name = "country", nullable = false)
     private String country;
 
+    @Column(name = "description", nullable = false)
+    private String description;
+
     @Column(name = "genre", nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Genre genre;

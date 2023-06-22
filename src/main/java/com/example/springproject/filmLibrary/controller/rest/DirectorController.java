@@ -1,4 +1,4 @@
-package com.example.springproject.filmLibrary.controller;
+package com.example.springproject.filmLibrary.controller.rest;
 
 import com.example.springproject.filmLibrary.dto.DirectorDTO;
 import com.example.springproject.filmLibrary.model.Director;
@@ -25,11 +25,11 @@ public class DirectorController extends GenericController<Director, DirectorDTO>
         super(directorService);
     }
 
-    @Operation(description = "Добавить фильм к режиссеру")
-    @RequestMapping(value = "/addFilm", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DirectorDTO> addFilm(@RequestParam(value = "filmId") Long filmId,
-                                               @RequestParam(value = "directorId") Long directorId) {
-        return ResponseEntity.status(HttpStatus.OK).body(((DirectorService) service).addFilm(filmId, directorId));
-    }
+//    @Operation(description = "Добавить фильм к режиссеру")
+//    @RequestMapping(value = "/addFilm", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<DirectorDTO> addFilm(@RequestParam(value = "filmId") Long filmId,
+//                                               @RequestParam(value = "directorId") Long directorId) {
+////        return ResponseEntity.status(HttpStatus.OK).body(((DirectorService) service).addFilm(filmId, directorId));
+//    }
 }
 

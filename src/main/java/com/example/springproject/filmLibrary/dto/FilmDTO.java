@@ -16,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class FilmDTO extends GenericDTO {
     private String filmTitle;
+    private String description;
     private LocalDate publishDate;
     private String country;
     private Genre genre;
