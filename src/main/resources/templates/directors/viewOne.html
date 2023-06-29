@@ -11,12 +11,12 @@
 <body>
 <form layout:fragment="content">
   <div class="mt-3">
-    <h3 th:text="'Информация о режиссере: ' + ${director.getDirectorFIO()}"></h3>
+    <h3 th:text="'Информация о режиссере: ' + ${director.getDirectorFio()}"></h3>
     <form class="row g-1">
       <div class="mb-2 row">
         <label for="directorFio" class="col-sm-2 col-form-label no-border">ФИО:</label>
         <div class="col-sm-10">
-          <p th:text="${director.getDirectorFIO()}" class="form-control-plaintext" id="directorFio">
+          <p th:text="${director.getDirectorFio()}" class="form-control-plaintext" id="directorFio">
         </div>
       </div>
       <div class="mb-2 row">
@@ -28,13 +28,13 @@
     </form>
     <hr class="hr"/>
 
-    <td th:text="'Фильмы автора ' + ${director.getDirectorFIO()}"></td>
+    <td th:text="'Фильмы автора ' + ${director.getDirectorFio()}"></td>
 
     <table class="table table-hover mt-3">
       <thead>
       <tr>
         <th scope="col">Название</th>
-        <th scope="col" class="col-md-5">Дата выхода</th>
+        <th scope="col" class="col-md-5">Год выхода</th>
         <th scope="col">Страна производства</th>
         <th scope="col">Жанр</th>
       </tr>
@@ -42,11 +42,19 @@
       <tbody>
       <tr th:each="film : ${films}">
         <td>
-          <a class="text-link text-blue" th:href="'/films/' + ${film.getId()}" th:text="${film.getFilmTitle()}"></a>
+          <a class="text-link text-blue" th:href="'/films/' + ${film.getId()}" th:text="${film.getTitle()}"></a>
         </td>
-        <td th:text="${film.getPublishDate()}"></td>
+        <td th:text="${film.getPremierYear()}"></td>
         <td th:text="${film.getCountry()}"></td>
-        <td th:text="${film.getGenre().getGenreTextDisplay()}"></td>
+        <td th:text="${film.getGenre()}"></td>
+        <!--          <td>-->
+        <!--            <div sec:authorize="isAuthenticated() && (hasRole('ADMIN') || hasRole('LIBRARIAN'))">-->
+        <!--              <a class="btn btn-sm btn-outline-success" th:href="'/authors/update/' + ${author.getId()}">Обновить</a>-->
+        <!--              <a th:if="${!author.isDeleted()}" class="btn btn-sm btn-outline-danger" th:href="'/authors/delete/' + ${author.getId()}"-->
+        <!--                 onclick="return confirm('Вы действительно хотите удалить автора?');">Удалить</a>-->
+        <!--              <a th:if="${author.isDeleted()}" class="btn btn-sm btn-outline-warning" th:href="'/authors/restore/' + ${author.getId()}">Восстановить</a>-->
+        <!--            </div>-->
+        <!--          </td>-->
       </tr>
       </tbody>
     </table>

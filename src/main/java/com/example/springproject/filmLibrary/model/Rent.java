@@ -19,20 +19,21 @@ import java.time.LocalDateTime;
 public class Rent extends GenericModel {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false,
-            foreignKey = @ForeignKey(name = "FK_ORDER_FILM_INFO_USERS"))
+            foreignKey = @ForeignKey(name = "FK_USERS_ID"))
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "film_id", nullable = false,
-            foreignKey = @ForeignKey(name = "FK_ORDER_FILM_INFO_USER"))
+            foreignKey = @ForeignKey(name = "FK_FILM_ID"))
     private Film film;
 
-    @Column(name = "rent_date")
-    private LocalDateTime rentDate;
+    @Column(name = "rent_date", nullable = false)
+    private LocalDateTime date;
 
-    @Column(name = "rent_period")
-    private Integer rentPeriod;
+    @Column(name = "rent_period", nullable = false)
+    private LocalDateTime rentPeriod;
 
-    @Column(name = "is_purchase")
-    private Boolean isPurchase;
+    @Column(name = "purchase")
+    private Boolean isPurchased;
+
 }

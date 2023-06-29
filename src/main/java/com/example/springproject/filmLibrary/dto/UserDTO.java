@@ -12,8 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @NoArgsConstructor
-public class UserDTO
-        extends GenericDTO {
+public class UserDTO extends GenericDTO {
     private String login;
     private String password;
     private String email;
@@ -23,6 +22,6 @@ public class UserDTO
     private String middleName;
     private String phone;
     private String address;
-    private RoleDTO role;
+    private Long roleId;
     private List<Long> rents;
 }
